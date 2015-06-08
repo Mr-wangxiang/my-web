@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    a:link{text-decoration: none;color: red   /* 指正常的未被访问过的链接*/}
+	a:visited{text-decoration:none; /*指已经访问过的链接*/}
+	a:hover{ text-decoration:underline;   text-decoration: none;		    color: blue/*指鼠标在链接*/}
+	a:active{text-decoration:none;/* 指正在点的链接*/ }
+    </style>
+ <script type="text/javascript" src="js/jquery.js"></script>
+<style type="text/css">
+body,ul,li{padding: 0; margin: 0;}
+ul,li{list-style: none;}
+body{font-size:12px;}
+
+#demo1{
+    position: relative;
+    margin: 50px auto;
+    width: 700px;
+    border:1px solid #ccc;
+}
+#demo1 .img_list{overflow: hidden; position: relative; height: 260px;}
+/* 根据图片的张数来设定ul的宽度 */
+.img_list ul{ width: 3500px; position: absolute; height: 260px; left: 0px;}
+.img_list li{ float: left; width: 700px;}
+.img_list img{ margin: 1px; width: 698px; height: 258px;}
+
+/* 图片对应的按钮样式 */
+.btn_list ul{ position: absolute; right: 20px; bottom: 35px; }
+.btn_list li{ float: left; margin-right: 10px; color: #999; border: 1px solid #ccc; }
+.btn_list li:hover,.btn_list li.on{ cursor: pointer; border: 1px solid #E204A4;}
+.btn_list li img{ width: 30px; height: 15px; display: block;}
+/* 左右点击的按钮样式 */
+#demo1 .toLeft,#demo1 .toRight{
+    display: none;
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    top: 110px;
+    background: url(image/zbbg_24.png) no-repeat 0 -150px;
+}
+
+/* 图片对应的说明*/
+.img_intro{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+}
+.img_intro .img_intro_bg,.img_intro .text{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.img_intro .img_intro_bg{
+    background: #000;
+    opacity: .3;
+    z-index: 999;
+}
+.img_intro .text{
+    padding: 5px 10px;
+    z-index: 1000;
+    color: #999;
+}
+#demo1 .toLeft{
+    left: -40px;
+}
+#demo1 .toRight{
+    right: -40px;
+    background-position: -50px -150px;
+}
+#apDiv1 {
+	position:absolute;
+	left:11px;
+	top:418px;
+	width:1067px;
+	height:67px;
+	z-index:1;
+}
+#apDiv2 {
+	position:absolute;
+	left:539px;
+	top:424px;
+	width:8px;
+	height:28px;
+	z-index:2;
+}
+#apDiv3 {
+	position:absolute;
+	left:55px;
+	top:447px;
+	width:1229px;
+	height:321px;
+	z-index:1;
+}
+#apDiv4 {
+	position:absolute;
+	left:954px;
+	top:454px;
+	width:315px;
+	height:311px;
+	z-index:2;
+}
+#apDiv5 {
+	position:absolute;
+	left:60px;
+	top:449px;
+	width:330px;
+	height:310px;
+	z-index:3;
+}
+#apDiv6 {
+	position:absolute;
+	left:402px;
+	top:452px;
+	width:510px;
+	height:309px;
+	z-index:4;
+}
+#apDiv7 {
+	position:absolute;
+	left:402px;
+	top:502px;
+	width:499px;
+	height:253px;
+	z-index:5;
+}
+#apDiv8 {
+	position:absolute;
+	left:30px;
+	top:772px;
+	width:1287px;
+	height:162px;
+	z-index:6;
+}
+#apDiv9 {
+	position:absolute;
+	left:39px;
+	top:780px;
+	width:314px;
+	height:141px;
+	z-index:7;
+}
+#apDiv10 {
+	position:absolute;
+	left:362px;
+	top:781px;
+	width:314px;
+	height:142px;
+	z-index:8;
+}
+#apDiv11 {
+	position:absolute;
+	left:681px;
+	top:781px;
+	width:319px;
+	height:143px;
+	z-index:9;
+}
+#apDiv12 {
+	position:absolute;
+	left:1001px;
+	top:782px;
+	width:313px;
+	height:139px;
+	z-index:10;
+}
+#apDiv13 {
+	position:absolute;
+	left:2px;
+	top:936px;
+	width:1392px;
+	height:51px;
+	z-index:11;
+}
+#apDiv14 {
+	position:absolute;
+	left:2px;
+	top:979px;
+	width:1349px;
+	height:161px;
+	z-index:12;
+}
+</style>
+
+
+</head>
+<body>
+<div id="apDiv3">
+  <table width="318" >
+    	<tr>
+        	<td width="157">
+             <a href="#" target="_blank"><img src="image/center1.png" alt="视频"></a>
+            </td>
+            <td width="194" >
+              <a href="#" target="_blank"><img src="image/center2.png" alt="壁纸"></a>
+            </td>
+        </tr>
+        <tr>
+        	<td >
+          <a href="#" target="_blank"><img src="image/center3.png" alt="原画"></a>
+            </td>
+            <td>
+          <a href="#" target="_blank"><img src="image/center4.png" alt="音乐"></a>
+            </td>
+        </tr>
+        <tr>
+        	<td >
+          <a href="#" target="_blank"><img src="image/center5.png" alt="原画"></a>
+            </td>
+            <td>
+          <a href="#" target="_blank"><img src="image/center6.png" alt="音乐"></a>
+            </td>
+        </tr>
+  </table>
+</div>
+<div id="apDiv4">
+ 	<table width="318" >
+    	<tr>
+        	<td width="157">
+             <a href="#" target="_blank"><img src="image/right1.png" alt="视频"></a>
+            </td>
+            <td width="194" >
+              <a href="#" target="_blank"><img src="image/right2.png" alt="壁纸"></a>
+            </td>
+        </tr>
+        <tr>
+        	<td >
+          <a href="#" target="_blank"><img src="image/right3.png" alt="原画"></a>
+            </td>
+            <td>
+          <a href="#" target="_blank"><img src="image/right4.png" alt="音乐"></a>
+            </td>
+        </tr>
+        </table>
+</div>
+<div id="apDiv5"></div>
+<div id="apDiv6">
+<table width="499" height="51">
+    	<tr>
+        	<td width="104" align="center">
+            <h2>最新</h2>
+            </td>
+            <td width="104" align="center">
+             <h2>新闻</h2>
+            </td>
+            <td width="104" align="center">
+             <h2>公告</h2>
+            </td>
+          <td width="104" align="center">
+             <h2>活动</h2>
+          </td>
+             <td width="104" align="center">
+             <h2>攻略</h2>
+            </td>
+        </tr>
+		</table>
+</div>
+<div id="apDiv7">
+  	<table>
+            	<tr>
+                	&nbsp;<p>&nbsp;&nbsp;&nbsp;[公告] 6月6日服务器开放公告&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;06/06</p>
+                </tr>
+                <tr>
+                	<p>&nbsp;&nbsp;&nbsp;[公告]天涯明月刀"陌上花开"限号不删档测试告玩家书 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;06/06<p>
+                </tr>
+                <tr>
+               		 <p>&nbsp;&nbsp;&nbsp;[公告]周末狂欢，多种新玩法开启&nbsp;&nbsp;&nbsp;&nbsp;06/06
+                    </p>
+                </tr>
+                <tr>
+               		 <p>&nbsp;&nbsp;&nbsp;[公告]
+                    三万人同服"黑科技"打造天刀不删档盛况&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      05/27  </p>
+                </tr>
+                <tr>
+              		  <p>&nbsp;&nbsp;&nbsp;[公告]
+                    关于剑试蔷薇老玩家装备保留、领取的公告   &nbsp;&nbsp;&nbsp;&nbsp;  05/27        </p>
+                </tr>
+                <tr>
+              		  <p>&nbsp;&nbsp;&nbsp;[公告]
+                        天涯明月刀不删档测试开服两日盛况回顾
+                         &nbsp;&nbsp;&nbsp;&nbsp;05/26</p>
+                </tr>
+                <tr>
+              		  <p>&nbsp;&nbsp;&nbsp;[公告]
+                    《天涯明月刀》放号正式启动 全平台一起浪迹天涯
+                        &nbsp;&nbsp;&nbsp;&nbsp;05/25</p>
+                </tr>
+  </table>
+</div>
+<div id="apDiv8"></div>
+<div id="apDiv9"><img src="image/footer1.png" width="312" height="142"></div>
+<div id="apDiv10"><img src="image/footer2.png" width="311" height="140"></div>
+<div id="apDiv11"><img src="image/footer3.png" width="311" height="139"></div>
+<div id="apDiv12"><img src="image/footer4.png" width="310" height="141"></div>
+<div id="apDiv13"><img src="image/footer6.png" width="1350" height="43"></div>
+<div id="apDiv14"><img src="image/footer7.png" width="1350" height="157"></div>
+<div align="center">
+  <table width="1100" height="82">
+            <tr>
+                <td width="188">
+                    <img src="image/logo.png">
+                </td>
+                <td width="120" align="center" valign="middle" bgcolor="#FFFFFF" >
+                    <p><a href="myweb.html ">官网首页</a></p>
+                </td>
+                <td width="119" align="center">
+                    <p>新闻中心</p>
+                </td>
+                <td width="120" align="center">
+                  <p>游戏介绍</p>
+                </td>
+                <td width="122" align="center">
+                    <p>下载专区</p>
+                </td>
+                <td width="122" align="center">
+                    <p>互动专区</p>
+                </td>
+                <td width="122" align="center">
+                    <p>视听盛宴</p>
+                </td>
+                <td width="122" align="center">
+                    <p>用户中心</p>
+                </td>
+                <td width="122" align="center">
+                    <p>客户服务</p>
+                </td>
+            </tr>
+  </table>
+</div>
+<div id="demo1">
+	<div class="img_list">
+		<ul>
+			<li><a href="http://sc.chinaz.com/" target="_blank"><img src="image/gsh_banner1.png" alt="新服开放"></a></li>
+			<li><a href="http://sc.chinaz.com/" target="_blank"><img src="image/gsh_banner2.jpg" alt="天衣阁"></a></li>
+			<li><a href="http://sc.chinaz.com/" target="_blank"><img src="image/gsh_banner3.jpg" alt="职业专题"></a></li>
+			<li><a href="http://sc.chinaz.com/" target="_blank"><img src="image/gsh_banner4.jpg" alt="一诺千金"></a></li>
+		</ul>
+	</div>
+	<div class="btn_list">
+		<ul>
+		</ul>
+	</div>
+	<div class="img_intro">
+		<div class="text"><a href="#" target="_blank"></a></div>
+		<div class="img_intro_bg"></div>
+	</div>
+	<a href="#" id="toLeft" class="link toLeft"></a>
+	<a href="#" id="toRight" class="link toRight"></a>
+</div>
+<p>&nbsp;
+</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;
+</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>
+  <script type="text/javascript">
+var index = 0;
+var timer = 0;
+var ulist = $('.img_list ul');
+var blist = $('.btn_list ul');
+var list = ulist.find('li');
+var llength = list.length;//li的个数，用来做边缘判断
+var lwidth = $(list[0]).width();//每个li的长度，ul每次移动的距离
+var uwidth = llength * lwidth;//ul的总宽度
+
+function init(){
+	//生成按钮(可以隐藏)
+	addBtn(list);
+	//显示隐藏左右点击开关
+	$('.link').css('display', 'block');
+	$('.link').bind('click', function(event) {
+		var elm = $(event.target);
+		doMove(elm.attr('id'));
+		return false;
+	});
+
+	//初始化描述
+	var text = ulist.find('li').eq(0).find('img').attr('alt');
+	var link = ulist.find('li').eq(0).find('a').attr('href');
+	$('.img_intro .text a').text(text);
+	$('.img_intro .text a').attr('href',link);
+	auto();
+}
+
+function auto(){
+	//定时器
+	timer = setInterval("doMove('toRight')",3000);
+
+	$('.img_list li, .btn_list li').hover(function() {
+		clearInterval(timer);
+	}, function() {
+		timer = setInterval("doMove('toRight')",3000);
+	});
+}
+
+function changeBtn(i){
+	blist.find('li').eq(i).addClass('on').siblings().removeClass('on');
+	var text = ulist.find('li').eq(i).find('img').attr('alt');
+	var link = ulist.find('li').eq(i).find('a').attr('href');
+	$('.img_intro .text a').text(text);
+	$('.img_intro .text a').attr('href',link);
+}
+
+function addBtn (list){
+	for (var i = 0; i < list.length; i++) {
+		var imgsrc = $(list[i]).find('img').attr('src');
+		var listCon = '<li><img src="'+imgsrc+'""></li>';
+		$(listCon).appendTo(blist);
+		//隐藏button中的数字
+		//list.css('text-indent', '10000px');
+	};
+	blist.find('li').first().addClass('on');
+	blist.find('li').click(function(event) {
+		var _index = $(this).index();
+		doMove(_index);
+	});
+}
+
+function doMove(direction){
+	//向右按钮
+	if (direction =="toRight") {
+		index++;
+		if ( index< llength) {
+			uwidth = lwidth *index;
+			ulist.css('left',-uwidth);
+			//ulist.animate({left: -uwidth}, 1000);
+
+		}else{
+			ulist.css('left','0px');
+			index = 0;
+		};
+	//向左按钮
+	}else if(direction =="toLeft"){
+		index--;
+		if ( index < 0) {
+			index = llength - 1;
+		}
+		uwidth = lwidth *index;
+		ulist.css('left',-uwidth);
+		//ulist.animate({left: -uwidth}, "slow");
+	//点击数字跳转
+	}else{
+		index = direction;
+		uwidth = lwidth *index;
+		ulist.css('left',-uwidth);
+	};
+	changeBtn(index);
+}
+init();
+      </script>
+</p>
+</body>
+</html>
